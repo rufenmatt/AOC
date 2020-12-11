@@ -60,12 +60,12 @@ func nextState(seats [][]byte, tolerance, visibilityLimit int) ([][]byte, bool) 
 			if seats[i][j] == FLOOR {
 				continue
 			}
-			neighbours := neighbors(seats, i, j, visibilityLimit)
-			if seats[i][j] == EMPTY && neighbours == 0 {
+			neighbors := neighbors(seats, i, j, visibilityLimit)
+			if seats[i][j] == EMPTY && neighbors == 0 {
 				new[i][j] = TAKEN
 				modified = true
 			}
-			if seats[i][j] == TAKEN && neighbours >= tolerance {
+			if seats[i][j] == TAKEN && neighbors >= tolerance {
 				new[i][j] = EMPTY
 				modified = true
 			}
