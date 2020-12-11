@@ -1,67 +1,53 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
+	"io/ioutil"
 	"strconv"
+	"strings"
 )
 
+var nums = make(map[int]bool)
+
+func partOne() int {
+	for n := range nums {
+		x := 2020 - n
+		if _, ok := nums[x]; ok {
+			return n * x
+		}
+	}
+	return -1
+}
+
+func partTwo() int {
+	for n := range nums {
+		for m := range nums {
+			if n == m {
+				continue
+			}
+			x := 2020 - (n + m)
+			_, ok := nums[x]
+			if ok {
+				return n * m * x
+			}
+		}
+	}
+	return -1
+}
+
 func main() {
-	entries := readData("input.txt")
-
-	{
-		fmt.Println("Part 1 solution")
-	one:
-		for _, a := range entries {
-			for _, b := range entries {
-				if a+b == 2020 {
-					fmt.Println(a * b)
-					break one
-				}
-			}
-		}
-	}
-
-	{
-		fmt.Println("Part 2 solution")
-	two:
-		for _, a := range entries {
-			for _, b := range entries {
-				for _, c := range entries {
-					if a+b+c == 2020 {
-						fmt.Println(a * b * c)
-						break two
-					}
-				}
-			}
-		}
-	}
-}
-
-func readData(filename string) []int {
-	file, err := os.Open(filename)
-	check(err)
-	defer file.Close()
-
-	scanner := bufio.NewScanner(file)
-	scanner.Split(bufio.ScanWords)
-
-	var values []int
-	for scanner.Scan() {
-		values = append(values, Int(scanner.Text()))
-	}
-	return values
-}
-
-func Int(s string) int {
-	result, err := strconv.Atoi(s)
-	check(err)
-	return result
-}
-
-func check(err error) {
+	data, err := ioutil.ReadFile("input.txt")
 	if err != nil {
 		panic(err)
 	}
+	lines := strings.TrimSpace(string(data))
+	for _, line := range strings.Split(lines, "\n") {
+		n, err := strconv.Atoi(line)
+		if err != nil {
+			panic(err)
+		}
+		nums[n] = true
+	}
+	fmt.Println("Part 1 solution:", partOne())
+	fmt.Println("Part 2 solution:", partTwo())
 }
