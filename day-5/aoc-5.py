@@ -55,8 +55,8 @@ def solverB(lines):
 if __name__ == '__main__':
     lines = []
 
-    with open('input.txt') as f:
-        for line in f.readlines():
+    with open('input.txt') as doc:
+        for line in doc.readlines():
             lines.append(line.strip())
 
     print('Part 2 solution:', solverB(lines))

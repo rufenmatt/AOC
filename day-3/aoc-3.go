@@ -21,11 +21,11 @@ func slope_checkin(x int, y int) int {
 var treeMap [][]int
 
 func main() {
-	dat, err := ioutil.ReadFile("input.txt")
+	data, err := ioutil.ReadFile("input.txt")
 	if err != nil {
 		panic(err)
 	}
-	lines := strings.Split(strings.TrimSpace(string(dat)), "\n")
+	lines := strings.Split(strings.TrimSpace(string(data)), "\n")
 	treeMap = make([][]int, 0)
 
 	for _, line := range lines {
