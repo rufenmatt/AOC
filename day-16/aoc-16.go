@@ -15,8 +15,8 @@ func main() {
 		os.Exit(1)
 	}
 	rules, ticket, nearby := parse(data)
-	fmt.Println(solveOne(rules, nearby))
-	fmt.Println(solveTwo(rules, ticket, nearby))
+	fmt.Println("Part 1 solution:", solveOne(rules, nearby))
+	fmt.Println("Part 2 solution:", solveTwo(rules, ticket, nearby))
 }
 
 func solveOne(rules map[string][][]int, nearby [][]int) int {

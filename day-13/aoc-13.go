@@ -43,7 +43,7 @@ func main() {
 			soonest = testTime
 		}
 	}
-	fmt.Println("Part 1 solution: ", soonest*bestTime)
+	fmt.Println("Part 1 solution:", soonest*bestTime)
 
 	schedules := []bus{}
 	for idx, time := range timeString {
@@ -71,7 +71,7 @@ func main() {
 	checkCounter := 0
 	for {
 		if checkCounter == len(schedules) {
-			fmt.Println("Part 2 solution: ", i-increment)
+			fmt.Println("Part 2 solution:", i-increment)
 			break
 		}
 		check := schedules[checkCounter]

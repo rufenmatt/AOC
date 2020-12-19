@@ -157,8 +157,8 @@ func main() {
 	inputString := strings.Split(strings.TrimSpace(string(data)), "\n")
 
 	ans := partOne(inputString)
-	fmt.Println("Part 1 solution: ", ans)
+	fmt.Println("Part 1 solution:", ans)
 
 	ans = partTwo(inputString)
-	fmt.Println("Part 2 solution: ", ans)
+	fmt.Println("Part 2 solution:", ans)
 }

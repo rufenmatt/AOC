@@ -19,8 +19,8 @@ func main() {
 	a := findNthNumberSpoken(2020, split)
 	b := findNthNumberSpoken(30000000, split)
 
-	fmt.Println("Part 1 solution: " + strconv.Itoa(a))
-	fmt.Println("Part 2 solution: " + strconv.Itoa(b))
+	fmt.Println("Part 1 solution:" + strconv.Itoa(a))
+	fmt.Println("Part 2 solution:" + strconv.Itoa(b))
 }
 
 func findNthNumberSpoken(n int, input []string) int {

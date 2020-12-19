@@ -54,7 +54,7 @@ func main() {
 			break
 		}
 	}
-	fmt.Println("Part 1 solution: ", weakness)
+	fmt.Println("Part 1 solution:", weakness)
 
 	for i, v := range numbers {
 		rollingSum := v
@@ -70,7 +70,7 @@ func main() {
 				low = current
 			}
 			if rollingSum == weakness {
-				fmt.Println("Part 2 solution: ", high+low)
+				fmt.Println("Part 2 solution:", high+low)
 				return
 			}
 			if rollingSum > weakness {
