@@ -8,11 +8,9 @@ import (
 
 func main() {
 	data, err := readlines("input.txt")
-
 	if err != nil {
 		os.Exit(1)
 	}
-
 	coords := parse(data)
 	fmt.Println("Part 1 solution:", solve3D(coords))
 	fmt.Println("Part 2 solution:", solve4D(coords))
