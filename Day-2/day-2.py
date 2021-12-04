@@ -1,9 +1,3 @@
-import os
-
-os.getcwd()
-
-os.chdir(r'/Users/mattiarufenacht/Desktop/AOC2021/Day-2')
-
 with open("input.txt", "r") as f:
     lines = f.readlines()
     maneuver = [line.strip() for line in lines]
